@@ -11,22 +11,21 @@
                 <b-col>
                     <b-button class="mr-1" href="https://github.com/JessieSmit01" variant="outline-dark"><i class="fab fa-github"></i> Github</b-button>
                     <b-button class="mr-1" href="https://www.linkedin.com/in/jessie-smith-3573a91a0/" variant="outline-primary"><i class="fab fa-linkedin"></i> LinkedIn</b-button>
-
                 </b-col>
             </b-row>
          </b-container>
        
     </b-jumbotron>
      <b-container>
-            <b-button-group>
-                <b-button variant="outline-dark" @click="handleProjOpt">Projects</b-button>
-             </b-button-group>
+         <b-row align-h="center">
+                <h1>Projects and Assignments</h1>
+         </b-row>
+         <b-row>
+                <card-section :option="option"></card-section>
 
-            <card-section :option="option"></card-section>
+         </b-row>
         </b-container>
 
-        
-        
 
  </b-container>
  
