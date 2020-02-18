@@ -12,8 +12,10 @@
                     fluid
                     width="200%"
                     ></b-img>
-                    <b-card-text>Created with Andoid Studio</b-card-text>
-                    <b-button variant="outline-primary" class="align-bottom" href="https://github.com/JessieSmit01/COSC195FInalProject">Link to Github</b-button>
+                    <template v-slot:footer>
+                         <b-button variant="outline-dark" class="align-bottom" href="https://github.com/JessieSmit01/COSC195FInalProject">Link to Github</b-button>
+                    </template>
+
                     
                 </b-card>
                 
@@ -27,10 +29,9 @@
                     fluid
                     width="200%"
                     ></b-img>
-                    <b-container class="align-bottom">
-                        <b-card-text>Rick and Morty themed Reversi game. Developed in a group of two</b-card-text>
-                    <b-button variant="outline-primary" class="align-bottom" href="https://github.com/JessieSmit01/cst112cst142Assignment2">Link to Github</b-button>
-                    </b-container>
+                    <template v-slot:footer>
+                        <b-button variant="outline-dark" class="align-bottom" href="https://github.com/JessieSmit01/cst112cst142Assignment2">Link to Github</b-button>
+                    </template>
                     
                     
                 </b-card>

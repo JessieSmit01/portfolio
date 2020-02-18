@@ -4,7 +4,7 @@
     fluid
     header="Jessie Smith"
     lead="Junior Web Developer"
-    variant="outline-secondary"
+    border-variant="dark"
     >
         <b-container fluid>
             <b-row>
@@ -18,14 +18,20 @@
     </b-jumbotron>
      <b-container>
          <b-row align-h="center">
-                <h1>Projects and Assignments</h1>
+                <h1><b>Projects and Assignments</b></h1>
          </b-row>
          <b-row>
                 <card-section :option="option"></card-section>
 
          </b-row>
         </b-container>
+        <hr style="margin-bottom: 5px">
+        <b-container class="bg-light" style="height: 50px">
 
+          <footer class="text-right" >
+              <p class="align-middle"><em>Created by Jessie Smith, 2020.</em></p>
+          </footer>
+        </b-container>
 
  </b-container>
  
