@@ -1,9 +1,9 @@
-<template>
+<template id="cards">
  <b-container>
     <b-jumbotron
     fluid
     header="Jessie Smith"
-    lead="Junior Web Developer"
+    lead="Computer Systems Technology Student, Saskatchewan Polytechnic"
     border-variant="dark"
     >
         <b-container fluid>
@@ -25,6 +25,9 @@
 
          </b-row>
         </b-container>
+        <!-- <hr style="margin-bottom: 5px">
+        <email-form></email-form> -->
+
         <hr style="margin-bottom: 5px">
         <b-container class="bg-light" style="height: 50px">
 
@@ -40,6 +43,7 @@
 
 <script>
 import CardSection from './CardSection.vue'
+// import EmailForm from './EmailForm.vue'
 
 export default {
     name: "Home",
@@ -52,7 +56,8 @@ export default {
     },
 
     components: {
-        CardSection
+        CardSection,
+        // EmailForm
     },
     methods: {
         handleProjOpt: function(){
@@ -64,5 +69,5 @@ export default {
 </script>
 
 <style>
-   
+  
 </style>

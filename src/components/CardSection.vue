@@ -9,8 +9,10 @@
                     class="font-weight-bold"
                     >   
                     <b-img src="https://i.ibb.co/JCtyqbS/Workout-Tracker-Home.png"
+                    thumbnail
                     fluid
                     width="200%"
+                    class="border-dark"
                     ></b-img>
                     <template v-slot:footer>
                          <b-button variant="outline-dark" class="align-bottom" href="https://github.com/JessieSmit01/COSC195FInalProject">Link to Github</b-button>
@@ -26,6 +28,7 @@
                     class="font-weight-bold"
                     >   
                     <b-img src="https://i.ibb.co/F5ZXDQn/Screenshot-20200217-135117-com-example-cst142cst112assign1.jpg"
+                    thumbnail
                     fluid
                     width="200%"
                     ></b-img>
