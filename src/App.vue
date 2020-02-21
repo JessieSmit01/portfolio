@@ -1,32 +1,22 @@
 <template>
-  <div id="app">
+  <v-app>
+    <v-sheet  color="cyan lighten-5" width="100%">
     <home></home>
-  </div>
+    </v-sheet>
+  </v-app>
+  
 </template>
 
 <script>
 
-import Home from './components/Home.vue'
-
+import Home from './components/Home';
+document.title = "Jessie Smith - Portfolio"
 export default {
   name: 'App',
+
   components: {
-    Home
-  }
-}
+    Home,
+  },
+
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-.form{
-  text-align: start
-}
-</style>
