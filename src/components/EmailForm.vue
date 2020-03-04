@@ -24,6 +24,9 @@ export default {
         HandleEmail:() => {
             window.location ='mailto:jessie.smit01@gmail.com';
         }
+    },
+    created: function () {
+       document.getElementById("toolbar").innerText = "Contact";
     }
     
     

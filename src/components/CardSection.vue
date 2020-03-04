@@ -8,7 +8,8 @@
                 <v-card
                     class="mx-auto m-xs-3 m-sm-3"
                     max-width="95%"
-                    color="cyan lighten-4"
+                    color="blue"
+                    dark
                     
                     >
                         <v-img
@@ -19,7 +20,7 @@
                         </v-img>
                         <v-card-title class="display-1 no-overflow">{{project.title}}</v-card-title>
                         <v-card-subtitle class="title">{{project.subtitle}}</v-card-subtitle>
-                        <v-btn outlined @click="OpenGithub(project.git)" width="80%" depressed color="black" class="ma-1" large ><v-icon dark>mdi-github-circle</v-icon>View on Github</v-btn>
+                        <v-btn outlined @click="OpenGithub(project.git)" width="80%" depressed color="white" class="ma-1" large ><v-icon dark>mdi-github-circle</v-icon>View on Github</v-btn>
 
                     </v-card>
                 </v-col>
@@ -51,8 +52,8 @@ export default {
             document.location = link
         }
     },
-    mounted () {
-        this.$emit("titleChange", "Projects");
+    created: function () {
+       document.getElementById("toolbar").innerText = "Projects";
     }
     
     

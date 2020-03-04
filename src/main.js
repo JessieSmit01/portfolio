@@ -15,8 +15,10 @@ Vue.use(VueRouter)
 
 import EmailForm from '././components/EmailForm.vue';
 import CardSection from '././components/CardSection.vue';
+import AboutMe from '././components/AboutMe.vue';
 
 const routes = [
+    {path: '/', component: AboutMe},
     {path: '/contact', component: EmailForm},
     {path: '/projects',component: CardSection},
     
