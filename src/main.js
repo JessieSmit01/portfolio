@@ -18,9 +18,9 @@ import CardSection from '././components/CardSection.vue';
 import AboutMe from '././components/AboutMe.vue';
 
 const routes = [
-    {path: '/', component: AboutMe},
-    {path: '/contact', component: EmailForm},
-    {path: '/projects',component: CardSection},
+    {path: '/', component: AboutMe, meta: {name: 'aboutMe'}},
+    {path: '/contact', component: EmailForm,meta: {name: 'contact'}},
+    {path: '/projects',component: CardSection, meta: {name: 'projects'}},
     
 
 ]
@@ -28,6 +28,7 @@ const routes = [
 const router = new VueRouter({
     routes
 })
+
 Vue.config.productionTip = false
 
 

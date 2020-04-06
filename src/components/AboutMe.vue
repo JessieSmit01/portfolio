@@ -1,11 +1,11 @@
 <template>
-<v-container>
+<v-container fluid>
         <v-card>
 
-            <v-expansion-panels dark accordion>
+            <v-expansion-panels v-model="panels" dark multiple>
                 <v-expansion-panel >
                     <v-expansion-panel-header color="blue"><h1 style="color: white">Hi I'm Jessie!</h1></v-expansion-panel-header>
-                    <v-expansion-panel-content color="blue">
+                    <v-expansion-panel-content  color="blue">
                         <h2 >
                             I'm a Computer Systems Technology Student at Saskatchewan Polytechnic
                                 <v-icon size="60">mdi-school</v-icon>
@@ -32,74 +32,38 @@
             centered
             grow
             >
-            <v-tab style="font-color: white;">Web</v-tab>
+            <v-tab style="font-color: white;">Web UI</v-tab>
             <v-tab>Operating Systems</v-tab>
-            <v-tab>Other languages and frameworks</v-tab>
+            <v-tab>Server-Side Programming</v-tab>
+            <v-tab>Programming Languages</v-tab>
+            <v-tab>IDE's</v-tab>
 
             <v-tab-item
             color="indigo lighten-4"
-                v-for="n in 3"
+                v-for="n in 5"
                 :key="n"
             >
-                <v-container v-if="n === 1" fluid>
+                 <v-container  fluid> <!--v-if="n === 1" -->
                     <v-row dense justify="center">
                         <v-col
-                        v-for="skill in WebSkills"
+                        fluid
+                        v-for="skill in n===1? WebSkills : n===2 ? AdminSkills : n===3 ? ServerSideSkills : n==4 ? ProgrammingLanguages : IDESkills"
                         :key="skill.title">
                         <v-card
-                            class=" mx-auto col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3"
-                            height="200px"
-                            width="100%"
+                            class="d-flex flex-column justify-center "
+                            
+                            
                             color="transparent"
                             flat
-                            
                             >
                                 <v-icon color="blue" size="70">{{skill.image}}</v-icon>
-                                <h3>{{skill.title}}</h3>
+                                <h4 class="d-flex justify-center">{{skill.title}}</h4>
                             </v-card>
                         </v-col>
                             
                     </v-row>
                 </v-container> 
-                <v-container v-if="n === 2" fluid>
-                    <v-row dense justify="center">
-                        <v-col
-                        v-for="skill in AdminSkills"
-                        :key="skill.title">
-                        <v-card
-                            class=" mx-auto col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"
-                            height="auto"
-                            width="100%"
-                            color="transparent"
-                            flat
-                            >
-                                <v-icon color="blue" size="600%" >{{skill.image}}</v-icon>
-                                <v-card-title class=".title "  style="padding: 0; word-wrap: break-word;" >{{skill.title}}</v-card-title>
-                                
-                            </v-card>
-                        </v-col>
-                            
-                    </v-row>
-                </v-container> 
-                 <v-container v-if="n === 3" fluid>
-                    <v-row dense justify="center">
-                        <v-col
-                        v-for="skill in ProgrammingLanguageSkills"
-                        :key="skill.title">
-                        <v-card
-                            class=" mx-auto col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"
-                            height="auto"
-                            width="100%"
-                            color="transparent"
-                            flat
-                            >
-                                <v-icon color="blue" size="600%" >{{skill.image}}</v-icon>
-                                <v-card-title class=".title "  style="padding: 0; word-wrap: break-word;" >{{skill.title}}</v-card-title>
-                            </v-card>
-                        </v-col>
-                            
-                    </v-row>
-                </v-container> 
+                
             </v-tab-item>
             </v-tabs>
         </v-card>
@@ -111,12 +75,14 @@ export default {
     name: "about-me",
     data: () => {
         return{
+            panels: [0],
             WebSkills: [
                 {title: "HTML5", image: "mdi-language-html5"},
-                {title: "CSS", image: "mdi-language-css3"},
+                {title: "CSS3", image: "mdi-language-css3"},
                 {title: "JavaScript", image: "mdi-language-javascript"},
-                {title: "Php", image: "mdi-language-php"},
-                {title: "Vue.js", image: "mdi-vuejs"}
+                {title: "Vue.js", image: "mdi-vuejs"},
+                {title: "JSON-API", image: "mdi-cloud-braces"}
+
             ],
             AdminSkills: [
                 {title: "Windows Server 2016", image: "mdi-windows"},
@@ -124,13 +90,27 @@ export default {
                 {title: "Windows 10", image: "mdi-windows"}
 
             ],
-            ProgrammingLanguageSkills: [
-                {title: "Java", image: "mdi-language-java"},
-                {title: "Swift", image: "mdi-language-swift"},
+            ServerSideSkills: [
+                
                 {title: "SQL", image: "mdi-database"},
                 {title: ".Net Core", image: "mdi-dot-net"},
-                {title: "Android Studio", image: "mdi-android-studio"}
+                {title: "Php", image: "mdi-language-php"},
+
+                
+            ],
+            ProgrammingLanguages:[
+                {title: "Java", image: "mdi-language-java"},
+                {title: "Swift", image: "mdi-language-swift"},
+                {title: "C#", image: "mdi-language-csharp"},
+
+            ],
+            IDESkills:[
+                {title: "Android Studio", image: "mdi-android-studio"},
+                {title: "Visual Studio", image: "mdi-visual-studio"}
+
             ]
+            
+
             
         }
        

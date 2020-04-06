@@ -1,7 +1,11 @@
 <template>
 
     <v-container>
-        <v-btn @click="HandleEmail">Email Me</v-btn>
+        <v-card flat>
+            <h1 style="margin-left: 10px">Contact Me</h1>
+            <v-btn  style="margin: 10px;" @click="HandleEmail" dark color="blue" fab><v-icon large>mdi-email</v-icon></v-btn>
+        </v-card>
+        
     </v-container>
     
 </template>

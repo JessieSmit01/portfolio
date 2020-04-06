@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-sheet  color="cyan lighten-5" width="100%">
+    <v-sheet   width="100%">
     <home></home>
     </v-sheet>
   </v-app>
