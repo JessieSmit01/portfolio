@@ -1,66 +1,77 @@
 <template>
         <v-container>
-            <v-row dense justify="center">
-                <v-col
-                v-for="project in projects"
-                :key="project.title"
-                class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                <v-card
-                    
-                    class="mx-auto m-xs-3 m-sm-3"
-                    width="95%"
-                    color="blue"
-                    dark
-                    >
-                        <v-card-title class="display-1 no-overflow">{{project.title}}</v-card-title>
-                        <v-card-subtitle class="title">{{project.subtitle}}</v-card-subtitle>
-                        <v-btn outlined class="ma-1" @click="project.overlay = !project.overlay" color="white">
-                            View Screenshot
-                            <v-overlay :value="project.overlay"
-                                @click="project.overlay = !project.overlay">
-                                <v-img
-                                v-if="project.size === 'small'"
-                                :src="project.src"
-                                width="300">
-                                </v-img>
-                                <v-img
-                                v-if="project.size === 'large'"
-                                :src="project.src"
-                                width="700">
-                                </v-img>
-                            </v-overlay>
-                        </v-btn>
-                        <v-btn outlined @click="OpenGithub(project.git)" width="80%" depressed color="white" class="ma-1" large ><v-icon dark>mdi-github-circle</v-icon>View on Github</v-btn>
-                        <v-expansion-panels v-model='panels' dark multiple>
-                        <v-expansion-panel >
-                            <v-expansion-panel-header color="blue"><h3 style="color: white">Skills</h3></v-expansion-panel-header>
-                            <v-expansion-panel-content  color="blue">  
-                                <br>
-                                 <v-col
-                                 class="d-flex flex-row flex-wrap"
-                                        
+            <v-card dark color=blue>
+                <h2 style="margin: .3em">Welcome to my Projects!</h2>
+            </v-card>
+            <v-expansion-panels dark >
+                    <v-expansion-panel >
+                        <v-expansion-panel-header  color=blue><h2 style="color:white">Click to view projects</h2></v-expansion-panel-header>
+                        <v-expansion-panel-content color=white>
+                            <v-row class="mb-6"
+                            >
+                                <v-col
+                                    v-for="project in projects"
+                                    :key="project.title"
+                                    class="d-flex flex-column "
                                 >
-                                    <v-card
-                                    
-                                        v-for="skill in project.skills"
-                                        :key="skill.title"
-                                        
-                                        
-                                        style="margin: 10px"
-                                        color="transparent"
-                                        flat
-                                        >
-                                            <v-icon color="white" size=70>{{skill.image}}</v-icon>
-                                            <h4 class="d-flex justify-center">{{skill.title}}</h4>
+                                <v-card
+                                    style="margin: 0,.3em"
+                                    width="95%"
+                                    color="blue"
+                                    dark
+                                    >
+                                        <h2 style="margin: .3em">{{project.title}}</h2>
+                                        <v-card-subtitle class="title">{{project.subtitle}}</v-card-subtitle>
+                                        <v-btn outlined class="ma-1" @click="project.overlay = !project.overlay" color="white">
+                                            View Screenshot
+                                            <v-overlay :value="project.overlay"
+                                                @click="project.overlay = !project.overlay">
+                                                <v-img
+                                                v-if="project.size === 'small'"
+                                                :src="project.src"
+                                                width="300">
+                                                </v-img>
+                                                <v-img
+                                                v-if="project.size === 'large'"
+                                                :src="project.src"
+                                                width="700">
+                                                </v-img>
+                                            </v-overlay>
+                                        </v-btn>
+                                        <v-btn outlined @click="OpenGithub(project.git)" width="80%" depressed color="white" class="ma-1" large ><v-icon dark>mdi-github-circle</v-icon>View on Github</v-btn>
+                                        <v-expansion-panels v-model='panels' dark multiple>
+                                        <v-expansion-panel >
+                                            <v-expansion-panel-header color="blue"><h3 style="color: white">Skills</h3></v-expansion-panel-header>
+                                            <v-expansion-panel-content  color="blue">  
+                                                <br>
+                                                <v-col
+                                                class="d-flex flex-row flex-wrap"
+                                                        
+                                                >
+                                                    <v-card
+                                                    
+                                                        v-for="skill in project.skills"
+                                                        :key="skill.title"
+                                                        
+                                                        
+                                                        style="margin: 10px"
+                                                        color="transparent"
+                                                        flat
+                                                        >
+                                                            <v-icon color="white" size=70>{{skill.image}}</v-icon>
+                                                            <h4 class="d-flex justify-center">{{skill.title}}</h4>
+                                                    </v-card>
+                                                    
+                                                </v-col>
+                                                </v-expansion-panel-content>
+                                            </v-expansion-panel>
+                                        </v-expansion-panels>
                                     </v-card>
-                                    
                                 </v-col>
-                                </v-expansion-panel-content>
-                            </v-expansion-panel>
-                        </v-expansion-panels>
-                    </v-card>
-                </v-col>     
-            </v-row>
+                            </v-row>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>     
+            </v-expansion-panels>
         </v-container>    
 </template>
 <script>
