@@ -1,10 +1,12 @@
 <template>
-<v-container fluid>
+<v-container >
+        <h1 style="color: #2196f3">About Me</h1>
+
         <v-card>
 
             <v-expansion-panels v-model="panels" dark multiple>
                 <v-expansion-panel >
-                    <v-expansion-panel-header color="blue"><h1 style="color: white">Hi I'm Jessie!</h1></v-expansion-panel-header>
+                    <v-expansion-panel-header color="blue"><h1 style="color: white">Hi I'm Jessie Smith!</h1></v-expansion-panel-header>
                     <v-expansion-panel-content  color="blue">
                         <h2 >
                             I'm a Computer Systems Technology Student at Saskatchewan Polytechnic
@@ -12,7 +14,7 @@
                         </h2>  
                         <br>
                         <h3>
-                            Through my studies, I have learned many great skills! Please view my skills below.
+                            Please view a collection of my skills below.
                         </h3>               
                         </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -23,7 +25,7 @@
         </v-card>
 
 
-        <v-card dark color="indigo">
+        <v-card min-height="300px" dark color="indigo">
             <v-card-title ><h1>My Skills <v-icon size="60" style="padding-left: 10px">mdi-console</v-icon></h1></v-card-title>
             <v-tabs
             background-color="indigo"
@@ -34,8 +36,7 @@
             >
             <v-tab style="font-color: white;">Web UI</v-tab>
             <v-tab>Operating Systems</v-tab>
-            <v-tab>Server-Side Programming</v-tab>
-            <v-tab>Programming Languages</v-tab>
+            <v-tab>Languages</v-tab>
             <v-tab>IDE's</v-tab>
 
             <v-tab-item
@@ -46,18 +47,16 @@
                  <v-container  fluid> <!--v-if="n === 1" -->
                     <v-row dense justify="center">
                         <v-col
+                        class="d-flex flex-row flex-wrap justify-center "
                         fluid
-                        v-for="skill in n===1? WebSkills : n===2 ? AdminSkills : n===3 ? ServerSideSkills : n==4 ? ProgrammingLanguages : IDESkills"
+                        v-for="skill in n===1? WebSkills : n===2 ? AdminSkills : n===3 ?  ProgrammingLanguages : IDESkills"
                         :key="skill.title">
                         <v-card
-                            class="d-flex flex-column justify-center "
-                            
-                            
                             color="transparent"
                             flat
                             >
-                                <v-icon color="blue" size="70">{{skill.image}}</v-icon>
-                                <h4 class="d-flex justify-center">{{skill.title}}</h4>
+                                <v-icon color="blue" size="50">{{skill.image}}</v-icon>
+                                <p class="d-flex justify-center">{{skill.title}}</p>
                             </v-card>
                         </v-col>
                             
@@ -81,7 +80,7 @@ export default {
                 {title: "CSS3", image: "mdi-language-css3"},
                 {title: "JavaScript", image: "mdi-language-javascript"},
                 {title: "Vue.js", image: "mdi-vuejs"},
-                {title: "JSON-API", image: "mdi-cloud-braces"}
+                {title: "JSON", image: "mdi-cloud-braces"}
 
             ],
             AdminSkills: [
@@ -90,18 +89,15 @@ export default {
                 {title: "Windows 10", image: "mdi-windows"}
 
             ],
-            ServerSideSkills: [
-                
-                {title: "SQL", image: "mdi-database"},
-                {title: ".Net Core", image: "mdi-dot-net"},
-                {title: "Php", image: "mdi-language-php"},
-
-                
-            ],
             ProgrammingLanguages:[
                 {title: "Java", image: "mdi-language-java"},
                 {title: "Swift", image: "mdi-language-swift"},
                 {title: "C#", image: "mdi-language-csharp"},
+                {title: "C", image: "mdi-language-c"},
+                {title: "SQL", image: "mdi-database"},
+                {title: ".Net Core", image: "mdi-dot-net"},
+                {title: "Php", image: "mdi-language-php"},
+                {title: "Perl", image: "mdi-console-line"},
 
             ],
             IDESkills:[
@@ -114,9 +110,6 @@ export default {
             
         }
        
-    },
-    created: function () {
-       document.getElementById("toolbar").innerText = "About Me";
     }
 
 }

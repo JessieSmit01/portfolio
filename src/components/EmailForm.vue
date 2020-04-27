@@ -2,7 +2,7 @@
 
     <v-container>
         <v-card flat>
-            <h1 style="margin-left: 10px">Contact Me</h1>
+            <h1 style="color: #2196f3">Contact Me</h1>
             <v-btn  style="margin: 10px;" @click="HandleEmail" dark color="blue" fab><v-icon large>mdi-email</v-icon></v-btn>
         </v-card>
         
@@ -28,9 +28,6 @@ export default {
         HandleEmail:() => {
             window.location ='mailto:jessie.smit01@gmail.com';
         }
-    },
-    created: function () {
-       document.getElementById("toolbar").innerText = "Contact";
     }
     
     

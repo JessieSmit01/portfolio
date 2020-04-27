@@ -15,9 +15,9 @@
         <v-divider vertical class="mt-0"></v-divider>
         <v-btn class="m-1" href="https://github.com/JessieSmit01" depressed color="transparent" fab  medium ><v-icon dark>mdi-github-circle</v-icon></v-btn> 
     </v-app-bar>
-          <v-sheet>
+          
             <router-view ></router-view>
-          </v-sheet>
+          
           <hr style="margin-bottom: 5px">
           <v-footer>
             <v-spacer></v-spacer>
